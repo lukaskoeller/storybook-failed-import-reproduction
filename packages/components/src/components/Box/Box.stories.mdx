@@ -1,0 +1,75 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+
+import { Box } from './';
+import styles from './Story.module.css';
+
+<Meta
+  title="Components/Container/Box"
+  component={Box}
+/>
+
+
+## Props
+<ArgsTable of={Box} />
+
+The `Box` component is a layout component (also see [every-layout.dev](https://every-layout.dev/)).
+It provides a base layout that is often extended by unique styles depending on the situation they are applied to.
+
+## Using Style Attributes
+Style Props is a way to extend component styles via props.
+Example given, you can extend the components `padding` by adding a prop `px` which adds `padding-inline` (or `padding-left` and `padding-right`) to the styled component.
+You can provide any valid css value to this prop, though, it is recommend to stick to the design tokens given by the theme and stored in the css `:root`.
+<Canvas>
+  <Story
+    name="using style classes"
+    args={{
+      className: 'p-4',
+    }}
+  >
+    {(args) => (
+        <Box {...args}>
+          This example extends styles using style props.
+        </Box>
+    )}
+  </Story>
+</Canvas>
+
+## Extending Styles via `className`
+<Canvas>
+  <Story
+    name="using className"
+    args={{
+      className: [styles.dashboard, 'p-7'].join(' '),
+    }}
+  >
+    {(args) => {
+      return (
+        <Box {...args}>
+          This example extends styles using additional classNames.
+        </Box>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Extending Styles via `style`
+<Canvas>
+  <Story
+    name="using style"
+    args={{
+      style: {
+        '--padding-block': 'var(--space-7)',
+        '--padding-inline': 'var(--space-2)',
+        backgroundColor: 'var(--colors-primary-5)',
+      },
+    }}
+  >
+    {(args) => {
+      return (
+        <Box {...args}>
+          This example extends styles using the style attribute.
+        </Box>
+      );
+    }}
+  </Story>
+</Canvas>

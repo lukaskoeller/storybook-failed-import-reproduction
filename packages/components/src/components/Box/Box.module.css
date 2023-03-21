@@ -1,0 +1,13 @@
+.box {
+  --padding: 0;
+  --margin: 0;
+
+  padding: var(--padding);
+  padding-inline: var(--padding-inline, var(--padding));
+  padding-block: var(--padding-block, var(--padding));
+  margin: var(--margin);
+  margin-inline: var(--margin-inline, var(--margin));
+  margin-block: var(--margin-block, var(--margin));
+  margin-block-start: var(--margin-block-start, var(--margin));
+  margin-block-end: var(--margin-block-end, var(--margin));
+}

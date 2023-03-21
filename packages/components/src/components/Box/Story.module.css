@@ -1,0 +1,5 @@
+.dashboard {
+  box-shadow: var(--shadows-sm);
+  border-radius: var(--radii-5);
+  padding: 1rem;
+}
