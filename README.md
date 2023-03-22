@@ -2,6 +2,8 @@
 
 Reference thread: https://discord.com/channels/486522875931656193/1087386862374633502
 
+Reference issue: https://github.com/storybookjs/storybook/issues/21716
+
 ## Gettings Started
 
 ```bash
